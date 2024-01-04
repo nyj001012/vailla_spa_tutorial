@@ -12,34 +12,10 @@
     <li>state는 setState로만 변경해야 한다.</li>
 </ol>
 <div id="app"></div>
-<script>
-  const $app = document.getElementById('app');
+<script type="module">
+  import App from './class/App.js'
 
-  let state = {
-    items: ['item1', 'item2', 'item3', 'item4']
-  }
-
-  const render = () => {
-    const {items} = state;
-    $app.innerHTML = `
-            <ul>
-              ${items.map(item => `<li>${item}</li>`).join('')}
-            </ul>
-            <button id="append">추가</button>
-          `
-    document.querySelector('#append').addEventListener('click', () => {
-      setState({
-        items: [...items, `item${items.length + 1}`]
-      })
-    })
-  }
-
-  const setState = (newState) => {
-    state = {...state, ...newState};
-    render();
-  }
-
-  render();
+  new App(document.getElementById('app'));
 </script>
 </body>
 </html>
