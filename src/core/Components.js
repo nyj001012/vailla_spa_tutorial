@@ -1,18 +1,22 @@
 export default class Components {
   $target;
+  props; // 부모 컴포넌트가 자식 컴포넌트에게 상태 혹은 메소드를 넘겨주기 위함
   state;
-  constructor ($target) {
+  constructor($target, props) {
     this.$target = $target;
+    this.props = props;
     this.setup();
     this.setEvent();
     this.render();
   }
   setup () {}
+  mounted () {};
   template () { return ''; }
   render () {
     this.$target.innerHTML = this.template();
+    this.mounted();
   }
-  setEvent () {}
+  setEvent () {};
   setState (newState) {
     this.state = { ...this.state, ...newState };
     this.render();
