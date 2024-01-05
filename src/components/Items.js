@@ -1,6 +1,6 @@
-import Components from "../core/Components.js";
+import Component from "../core/Component.js";
 
-export default class Items extends Components {
+export default class Items extends Component {
   setup() {
     this.state = {items: ['item1', 'item2']};
   }

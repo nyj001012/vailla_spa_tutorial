@@ -1,4 +1,4 @@
-export default class Components {
+export default class Component {
   $target;
   props; // 부모 컴포넌트가 자식 컴포넌트에게 상태 혹은 메소드를 넘겨주기 위함
   state;
